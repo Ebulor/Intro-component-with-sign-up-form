@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Intro component with sign-up form</title>
+</head>
+<body>
+    <div class="container">
+        <div class="top">
+            <h2>Learn to code by watching others</h2>
+            <p>
+                See how experienced developers solve problems in real-time.
+                Watching scripted tutorials is great, but understanding
+                how developers think is invaluable. 
+            </p>
+        </div>  
+        <div class="bottom">
+            <div class="info">
+                <h3>Try it free 7 days
+                    <span>then $20/mo. thereafter</span>
+                </h3>
+            </div>
+            <div class="form-container">
+                <form action="#">
+                    <div class="form-content">
+                        <div class="form-input">
+                            <input id="first-name" type="input" placeholder="First Name">
+                            <i id="f-n-icon" class="error-icon"><img src="images/icon-error.svg"></i>
+                        </div>
+                        <div><span id="fn-error" class="error-message"></span></div>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-input">
+                            <input id="last-name" type="input" placeholder="Last Name">
+                            <i id="l-n-icon" class="error-icon"><img src="images/icon-error.svg"></i>
+                        </div>
+                        <div><span id="ln-error" class="error-message"></span></div>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-input">
+                            <input id="email" type="text" placeholder="Email Address">
+                            <i id="email-icon" id="error-icon"><img src="images/icon-error.svg"></i>
+                        </div>
+                        <div><span id="email-error" class="error-message"></span></div>
+                    </div>      
+                    <div class="form-content">
+                        <div class="form-input">
+                            <input id="password" type="password" placeholder="Password">
+                            <i id="password-icon" id="error-icon"><img src="images/icon-error.svg"></i>
+                        </div>
+                        <div><span id="password-error" class="error-message"></span></div>
+                    </div>
+                    <button id="button" type="submit">Claim your free trial</button>
+                </form>
+                <p>By clicking the button, you are agreeing to our
+                    <span>Terms and Services</span>
+                </p>
+            </div>
+        </div>  
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
