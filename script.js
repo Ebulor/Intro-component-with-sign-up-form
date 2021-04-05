@@ -95,28 +95,3 @@ function myFunction(){
 
 
 
-/** var firstName = document.getElementById("first-name").value;
-        var lastName = document.getElementById("last-name").value;
-        var y = document.getElementById("button").addEventListener("click", myFunction);
-        function myFunction(){
-            var b = document.getElementById("error-icon");
-            var a = document.getElementById("error");
-            
-            if(firstName == ""){
-                a.style.display = "block";
-                b.style.display = "block";
-            }
-            else{
-                a.style.display = "none";
-                b.style.display = "none";
-            }
-            if(lastName == ""){
-                a.style.display = "block";
-                b.style.display = "block";
-            }
-            else{
-                a.style.display = "none";
-                b.style.display = "none";
-            }
-        }
- **/
