@@ -1,73 +1,95 @@
-var firstName = document.getElementById("first-name");
-var lastName = document.getElementById("last-name");
-var email = document.getElementById("email");
-var password = document.getElementById("password");
-var button = document.getElementById("button").addEventListener("click", myFunction);
+const firstName = document.getElementById("first-name");
+const lastName = document.getElementById("last-name");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const form = document.querySelector("form");
+const emailExpression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-function myFunction(){
-    //error message
-    var firstNameError = document.getElementById("fn-error");
-    var lastNameError = document.getElementById("ln-error");
-    var emailError = document.getElementById("email-error");
-    var passwordError = document.getElementById("password-error");
+form.addEventListener("submit",(e)=>{
+    const error_message = document.querySelectorAll(".error-message");  
+    const error_icon = document.querySelectorAll(".error-icon");  
+    var isEmpty = false; 
+        
+    if(firstName.value == ""){ 
+        error_message[0].classList.add("error");
+        error_icon[0].classList.add("error"); 
+        firstName.classList.add("error");    
+        isEmpty = true;                 
+    }
+    else{
+        error_message[0].classList.remove("error"); 
+        error_icon[0].classList.remove("error");  
+        firstName.classList.remove("error");           
+    }
+    if(lastName.value == ""){ 
+        error_message[1].classList.add("error");
+        error_icon[1].classList.add("error"); 
+        lastName.classList.add("error");   
+        isEmpty = true;                  
+    }
+    else{
+        error_message[1].classList.remove("error"); 
+        error_icon[1].classList.remove("error");  
+        lastName.classList.remove("error");           
+    }
+    if(!emailExpression.test(email.value)){ 
+        error_message[2].classList.add("error");
+        error_icon[2].classList.add("error"); 
+        email.classList.add("error");              
+        isEmpty = true;       
+    }
+    else{
+        error_message[2].classList.remove("error"); 
+        error_icon[2].classList.remove("error");  
+        email.classList.remove("error");           
+    }
+    if(password.value == ""){ 
+        error_message[3].classList.add("error");
+        error_icon[3].classList.add("error"); 
+        password.classList.add("error");    
+        isEmpty = true;                 
+    }
+    else{
+        error_message[3].classList.remove("error"); 
+        error_icon[3].classList.remove("error");  
+        password.classList.remove("error");           
+    }    
 
-    //error icon
-
-    var firstNameIcon = document.getElementById("f-n-icon");
-    var lastNameIcon = document.getElementById("l-n-icon"); 
-    var emailIcon = document.getElementById("email-icon");
-    var passwordIcon = document.getElementById("password-icon");
+    if(isEmpty){
+        e.preventDefault();
+    }
     
-    var emailExpression = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
     
-  
+})    
 
-    if(firstName.value == ""){       
-       firstName.style.border = "1px solid red"; 
-       firstNameError.style.display = "block";
-       firstNameError.innerHTML = "First Name cannot be empty";
-       firstNameIcon.style.display = "block";       
-    }
-    else{
-        firstName.style.border = "1px solid #e7e7e9";
-        firstNameIcon.style.display = "none";
-        firstNameError.style.display = "none";        
-    }
-    if(lastName.value == ""){
-        lastName.style.border = "1px solid red";
-        lastNameError.style.display = "block";
-        lastNameError.innerHTML = "Last Name cannot be empty";
-        lastNameIcon.style.display = "block";
-    }
-    else{
-        lastName.style.border = "1px solid #e7e7e9";
-        lastNameIcon.style.display = "none";
-        lastNameError.style.display = "none";        
-    }
-    if (!emailExpression.test(email.value)) {
-        email.style.border = "1px solid red";
-        emailError.style.display = "block";
-        emailError.innerHTML = "Looks like this is not an email";  
-        emailIcon.style.display = "block";      
-    } 
-    else {
-        email.style.border = "1px solid #e7e7e9";
-        emailError.innerHTML = "";   
-        emailIcon.style.display = "none";     
-    }
-    if(password.value == ""){
-        password.style.border = "1px solid red";
-        passwordError.style.display = "block";
-        passwordError.innerHTML = "Password cannot be empty";
-        passwordIcon.style.display = "block";
-    }
-    else{
-        password.style.border = "1px solid #e7e7e9";
-        passwordIcon.style.display = "none";
-        passwordError.style.display = "none";        
-    }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
